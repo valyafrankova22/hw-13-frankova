@@ -13,7 +13,6 @@ function mathPower(userNum1, userNum2 = 1) {
 }
 
 mathPower(prompt(`Введите число`), prompt(`Введите степень`));
-console.log(mathPower());
 
 
 
