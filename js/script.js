@@ -1,47 +1,19 @@
-mathElevate();
-
-function mathElevate(userNum1, userNum2 = 1) {
-    userNum1 = prompt(`Введите число`);
-    userNum2 = prompt(`Введите степень`);
-    let result;
-
-    if (userNum1 === null || userNum2 === null) {
-        return alert(`error: вы ничего не ввели`);
-    } else if (userNum1 === `` || userNum2 === ``) {
-        return alert(`error: вы оставили строку пустой`);
-    } else if (isNaN(+userNum1) || isNaN(+userNum2)) {
-        return alert(`error: вы ввели не число`);
-    } else {
-        return alert(userNum1 ** userNum2);
+function isValidNumber (arg) {
+    if   (typeof arg === "number" && !isNaN(arg)) {
+        return true;
     }
-}
- console.log(mathElevate());
-
-
-
-
-
-/*
-function pow(x, n) {
-    let result = x;
-
-    for (let i = 1; i < n; i++) {
-        result *= x;
-    }
-
-    return result;
+    return false;
 }
 
-let x = prompt("x?", '');
-let n = prompt("n?", '');
+function mathPower(userNum1, userNum2 = 1) {
+    if (isValidNumber(userNum1)) return `userNum1 is not valid`;
+    if (isValidNumber(userNum2)) return `userNum2 is not valid`;
 
-if (n < 1) {
-    alert(`Степень ${n} не поддерживается, используйте натуральное число`);
-} else {
-    alert( pow(x, n) );
+    return alert(Math.pow(userNum1, userNum2));
 }
-*/
 
+mathPower(prompt(`Введите число`), prompt(`Введите степень`));
+console.log(mathPower());
 
 
 
